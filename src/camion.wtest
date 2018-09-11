@@ -1,0 +1,12 @@
+import camion.*
+import cosas.*
+
+describe "cargaCamion" {
+
+	test "tiene Residuos Radioactivos" {
+		residuosRadioactivos.toneladas(500) 
+		camion.cargar(residuosRadioactivos)
+		assert.equals(1500, camion.pesoTotal())
+
+	}
+}
