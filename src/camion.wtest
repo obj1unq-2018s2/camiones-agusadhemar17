@@ -9,4 +9,3 @@ describe "cargaCamion" {
 		assert.equals(1500, camion.pesoTotal())
 
 	}
-}

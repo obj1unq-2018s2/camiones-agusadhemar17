@@ -6,12 +6,12 @@ object embalajeDeSeguridad {/*Es una cobertura que envuelve a cualquier otra cos
 peso es el peso de la cosa que tenga adentro. El nivel de peligrosidad es la mitad
 del nivel de peligrosidad de lo que envuelve*/
 	
-	
-	method peso (cosa){
-		return cosa.peso()
+	var property contenido
+	method peso (){
+		return contenido.peso()
 	}
-	method peligrosidad(cosa){
-		return cosa.peligrosidad()/2
+	method peligrosidad(){
+		return contenido.peligrosidad()/2
 	}
 	
 }
@@ -28,16 +28,15 @@ object residuosRadioactivos {
 	
 }
 
-object contenedorPortuario {/*Un contenedor puede tener otras cosas adentro. El peso es
-100 + la suma de todas las cosas que esté adentro. Es tan peligroso como el objeto
-más peligroso que contiene. Si está vacío es 0.*/
-	var contenedor=  [] 
+object contenedorPortuario {
+	const contenedor=  [] 
+	method contenido (cosa)	{ return contenedor.add(cosa)}
 	method peso (cosa){
 		return if (contenedor.isEmpty()) 0 else 100+contenedor.sum ({elemento => cosa.peso()})
 	}
 	
 	method peligrosidad(){
-		return if (contenedor.isEmpty()) 0 else contenedor.max({elemento => elemento.peligrosidad()})
+		return if (contenedor.isEmpty()) 0 else contenedor.max({elemento => elemento.peligrosidad()}).peligrosidad()
 	}
 	
 }
@@ -64,17 +63,17 @@ object arenaAGranel {
 }
 
 object paqueteDeLadrillos {
-	var ladrillos = 0
+	var property ladrillos = 0
 	
 	method peso (){
-		return 2
+		return ladrillos*2
 	}
 	method peligrosidad(){
 		return 15
 	}
-	method cantidadLadrillos(){
-		return ladrillos
-	}
+	//method cantidadLadrillos(){
+	//	return ladrillos
+	//}
 }
 
 object bumblebee {
