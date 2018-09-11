@@ -32,7 +32,7 @@ object camion {
 	}// Todos los objetos cargados que son más peligrosos que la cosa.
 	
 	method puedeCircularEnRuta(nivelMaximoPeligrosidad){
-		return carga.any({elemento => elemento.peligrosidad() > nivelMaximoPeligrosidad })
+		return carga.any({elemento => !(elemento.peligrosidad() > nivelMaximoPeligrosidad) })
 	} //Puede circular si ningúna cosa que transporta supera el nivelMaximoPeligrosidad. */
 }
 
