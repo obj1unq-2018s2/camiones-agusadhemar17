@@ -6,7 +6,7 @@ Residuos radioactivos: El peso es variable y su peligrosidad es 200
 Embalaje de seguridad: Es una cobertura que envuelve a cualquier otra cosa. El
 peso es el peso de la cosa que tenga adentro. El nivel de peligrosidad es la mitad
 del nivel de peligrosidad de lo que envuelve.
- */
+ */ 
 
 object contenedorPortuario {//completar
 	var contenedor=  [] 

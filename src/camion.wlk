@@ -13,7 +13,7 @@ object camion {
 	
 	method descargar (cosa){
 		carga.remove(cosa)
-	} 
+	}  
 	
 	method pesoTotal(){ //Es la suma del peso del camión vacío (tara) y su carga. la tara del camión es de 1 tonelada
 	//	return tara+ cosa.peso()
